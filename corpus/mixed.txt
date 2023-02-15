@@ -1,0 +1,96 @@
+=====
+helma in html element
+=====
+<html><% macro paramKey=paramValue %></html>
+---
+
+(fragment
+  (text)
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value)))
+  (text))
+
+
+
+=====
+helma in header element
+=====
+<html><% macro paramKey=paramValue %></html>
+---
+
+(fragment
+  (text)
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value)))
+  (text))
+
+=====
+helma in head element
+=====
+<html><head><% macro paramKey=paramValue %></head></html>
+---
+
+(fragment
+  (text)
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value)))
+  (text))
+
+=====
+helma in script tag
+=====
+<html><head></head><body><script><% macro paramKey=paramValue %><script></body></html>
+---
+
+(fragment
+  (text)
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value)))
+  (text))
+
+=====
+helma everywhere
+=====
+<html>
+  <head>
+    <style>
+      body {
+        color: <% brand id=<% context company="1" %> %>
+      }
+    </style>
+  </head>
+  <body>
+    <script><% macro paramKey="paramValue" %><script>
+  </body>
+</html>
+---
+(fragment
+  (text)
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (macro
+        (macro_name)
+        (macro_parameter
+          (parameter_key)
+          (parameter_value)))))
+ (text)
+ (macro
+   (macro_name)
+   (macro_parameter
+     (parameter_key)
+     (parameter_value)))
+ (text))

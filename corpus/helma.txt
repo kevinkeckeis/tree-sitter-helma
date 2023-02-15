@@ -1,0 +1,136 @@
+=====
+Macro /w spaces
+=====
+<% macro %>
+---
+
+(fragment
+  (macro
+    (macro_name)))
+
+=====
+Macro /wo spaces
+=====
+<%macro%>
+---
+
+(fragment
+  (macro
+    (macro_name)))
+
+=====
+Macro /w dot /w spaces
+=====
+<% this.macro %>
+---
+
+(fragment
+  (macro
+    (macro_name)))
+
+=====
+Macro /w dot /wo spaces
+=====
+<%this.macro%>
+---
+
+(fragment
+  (macro
+    (macro_name)))
+
+=====
+Macro /w param /wo quotes
+=====
+<% macro paramKey=paramValue %>
+---
+
+(fragment
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value))))
+
+=====
+Macro /w single quotes parameter
+=====
+<% macro paramKey='paramValue' %>
+---
+
+(fragment
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value))))
+
+
+=====
+Macro /w double quotes parameter
+=====
+<% macro paramKey="paramValue" %>
+---
+
+(fragment
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value))))
+
+=====
+Macro /w dot /w quoted param
+=====
+<% this.macro text="Homepage" %>
+---
+
+(fragment
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value))))
+
+=====
+Macro /w dot /w quoted param /wo spaces
+=====
+<%this.macro text="Homepage"%>
+---
+
+(fragment
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (parameter_value))))
+
+=====
+Nested Macro
+=====
+<% macro paramKey=<%macro%> %>
+---
+
+(fragment
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (macro
+        (macro_name)))))
+
+=====
+Nested Macro /w params
+=====
+<% macro paramKey=<%macro text="hello world" %> %>
+---
+
+(fragment
+  (macro
+    (macro_name)
+    (macro_parameter
+      (parameter_key)
+      (macro
+        (macro_name)
+        (macro_parameter
+          (parameter_key)
+          (parameter_value))))))
